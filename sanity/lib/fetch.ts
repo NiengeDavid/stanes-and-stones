@@ -1,7 +1,124 @@
-import { NAVIGATION_QUERYResult, SETTINGS_QUERYResult } from "@/sanity.types";
 import { sanityFetch } from "@/sanity/lib/live";
+import { PAGE_QUERY, PAGES_SLUGS_QUERY } from "@/sanity/queries/page";
 import { NAVIGATION_QUERY } from "@/sanity/queries/navigation";
 import { SETTINGS_QUERY } from "@/sanity/queries/settings";
+import { QUOTE_SETTINGS_QUERY } from "@/sanity/queries/quote-settings";
+import { CONTACT_QUERY } from "@/sanity/queries/contact";
+
+import {
+  POST_QUERY,
+  POSTS_QUERY,
+  POSTS_SLUGS_QUERY,
+} from "@/sanity/queries/post";
+
+import {
+  WORK_QUERY,
+  WORKS_QUERY,
+  WORKS_SLUGS_QUERY,
+} from "@/sanity/queries/work";
+
+import {
+  PAGE_QUERYResult,
+  PAGES_SLUGS_QUERYResult,
+  POST_QUERYResult,
+  POSTS_QUERYResult,
+  POSTS_SLUGS_QUERYResult,
+  NAVIGATION_QUERYResult,
+  SETTINGS_QUERYResult,
+  WORK_QUERYResult,
+  WORKS_QUERYResult,
+  WORKS_SLUGS_QUERYResult,
+  CONTACT_QUERYResult,
+  QUOTE_SETTINGS_QUERYResult,
+} from "@/sanity.types";
+
+export const fetchSanityPageBySlug = async ({
+  slug,
+}: {
+  slug: string;
+}): Promise<PAGE_QUERYResult> => {
+  const { data } = await sanityFetch({
+    query: PAGE_QUERY,
+    params: { slug },
+  });
+
+  return data;
+};
+
+export const fetchSanityPagesStaticParams =
+  async (): Promise<PAGES_SLUGS_QUERYResult> => {
+    const { data } = await sanityFetch({
+      query: PAGES_SLUGS_QUERY,
+      perspective: "published",
+      stega: false,
+    });
+
+    return data;
+  };
+
+export const fetchSanityPosts = async (): Promise<POSTS_QUERYResult> => {
+  const { data } = await sanityFetch({
+    query: POSTS_QUERY,
+  });
+
+  return data;
+};
+
+export const fetchSanityPostBySlug = async ({
+  slug,
+}: {
+  slug: string;
+}): Promise<POST_QUERYResult> => {
+  const { data } = await sanityFetch({
+    query: POST_QUERY,
+    params: { slug },
+  });
+
+  return data;
+};
+
+export const fetchSanityPostsStaticParams =
+  async (): Promise<POSTS_SLUGS_QUERYResult> => {
+    const { data } = await sanityFetch({
+      query: POSTS_SLUGS_QUERY,
+      perspective: "published",
+      stega: false,
+    });
+
+    return data;
+  };
+
+export const fetchSanityWorks = async (): Promise<WORKS_QUERYResult> => {
+  const { data } = await sanityFetch({
+    query: WORKS_QUERY,
+  });
+
+  return data;
+};
+
+export const fetchSanityWorkBySlug = async ({
+  slug,
+}: {
+  slug: string;
+}): Promise<WORK_QUERYResult> => {
+  const { data } = await sanityFetch({
+    query: WORK_QUERY,
+    params: { slug },
+  });
+
+  return data;
+};
+
+export const fetchSanityWorksStaticParams =
+  async (): Promise<WORKS_SLUGS_QUERYResult> => {
+    const { data } = await sanityFetch({
+      query: WORKS_SLUGS_QUERY,
+      perspective: "published",
+      stega: false,
+    });
+
+    return data;
+  };
 
 export const fetchSanityNavigation =
   async (): Promise<NAVIGATION_QUERYResult> => {
@@ -19,3 +136,20 @@ export const fetchSanitySettings = async (): Promise<SETTINGS_QUERYResult> => {
 
   return data;
 };
+
+export const fetchSanityContact = async (): Promise<CONTACT_QUERYResult> => {
+  const { data } = await sanityFetch({
+    query: CONTACT_QUERY,
+  });
+
+  return data;
+};
+
+export const fetchSanityQuoteSettings =
+  async (): Promise<QUOTE_SETTINGS_QUERYResult> => {
+    const { data } = await sanityFetch({
+      query: QUOTE_SETTINGS_QUERY,
+    });
+
+    return data;
+  };

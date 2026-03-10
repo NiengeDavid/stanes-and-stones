@@ -16,13 +16,20 @@ export const structure = (S: any, context: any) =>
   S.list()
     .title("Content")
     .items([
+      orderableDocumentListDeskItem({
+        type: "page",
+        title: "Pages",
+        icon: Files,
+        S,
+        context,
+      }),
       S.listItem()
         .title("Posts")
         .schemaType("post")
         .child(
           S.documentTypeList("post")
             .title("Post")
-            .defaultOrdering([{ field: "_createdAt", direction: "desc" }]), // Default ordering
+            .defaultOrdering([{ field: "_createdAt", direction: "desc" }]) // Default ordering
         ),
       orderableDocumentListDeskItem({
         type: "category",
@@ -38,6 +45,41 @@ export const structure = (S: any, context: any) =>
         S,
         context,
       }),
+      orderableDocumentListDeskItem({
+        type: "faq",
+        title: "FAQs",
+        icon: ListCollapse,
+        S,
+        context,
+      }),
+      orderableDocumentListDeskItem({
+        type: "testimonial",
+        title: "Testimonials",
+        icon: Quote,
+        S,
+        context,
+      }),
+      orderableDocumentListDeskItem({
+        type: "featuredWorks",
+        title: "Works",
+        icon: Star,
+        S,
+        context,
+      }),
+      orderableDocumentListDeskItem({
+        type: "contact",
+        title: "Contact Information",
+        icon: Phone,
+        S,
+        context,
+      }),
+      orderableDocumentListDeskItem({
+        type: "quoteSettings",
+        title: "Quote Settings",
+        icon: Calculator,
+        S,
+        context,
+      }),
       S.divider(),
       S.listItem()
         .title("Navigation")
@@ -46,7 +88,7 @@ export const structure = (S: any, context: any) =>
           S.editor()
             .id("navigation")
             .schemaType("navigation")
-            .documentId("navigation"),
+            .documentId("navigation")
         ),
       S.listItem()
         .title("Settings")
@@ -55,6 +97,6 @@ export const structure = (S: any, context: any) =>
           S.editor()
             .id("settings")
             .schemaType("settings")
-            .documentId("settings"),
+            .documentId("settings")
         ),
     ]);
