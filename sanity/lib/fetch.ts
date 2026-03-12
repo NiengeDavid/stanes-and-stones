@@ -18,25 +18,25 @@ import {
 } from "@/sanity/queries/work";
 
 import {
-  PAGE_QUERYResult,
-  PAGES_SLUGS_QUERYResult,
-  POST_QUERYResult,
-  POSTS_QUERYResult,
-  POSTS_SLUGS_QUERYResult,
-  NAVIGATION_QUERYResult,
-  SETTINGS_QUERYResult,
-  WORK_QUERYResult,
-  WORKS_QUERYResult,
-  WORKS_SLUGS_QUERYResult,
-  CONTACT_QUERYResult,
-  QUOTE_SETTINGS_QUERYResult,
+  PAGE_QUERY_RESULT,
+  PAGES_SLUGS_QUERY_RESULT,
+  POST_QUERY_RESULT,
+  POSTS_QUERY_RESULT,
+  POSTS_SLUGS_QUERY_RESULT,
+  NAVIGATION_QUERY_RESULT,
+  SETTINGS_QUERY_RESULT,
+  WORK_QUERY_RESULT,
+  WORKS_QUERY_RESULT,
+  WORKS_SLUGS_QUERY_RESULT,
+  CONTACT_QUERY_RESULT,
+  QUOTE_SETTINGS_QUERY_RESULT,
 } from "@/sanity.types";
 
 export const fetchSanityPageBySlug = async ({
   slug,
 }: {
   slug: string;
-}): Promise<PAGE_QUERYResult> => {
+}): Promise<PAGE_QUERY_RESULT> => {
   const { data } = await sanityFetch({
     query: PAGE_QUERY,
     params: { slug },
@@ -46,7 +46,7 @@ export const fetchSanityPageBySlug = async ({
 };
 
 export const fetchSanityPagesStaticParams =
-  async (): Promise<PAGES_SLUGS_QUERYResult> => {
+  async (): Promise<PAGES_SLUGS_QUERY_RESULT> => {
     const { data } = await sanityFetch({
       query: PAGES_SLUGS_QUERY,
       perspective: "published",
@@ -56,7 +56,7 @@ export const fetchSanityPagesStaticParams =
     return data;
   };
 
-export const fetchSanityPosts = async (): Promise<POSTS_QUERYResult> => {
+export const fetchSanityPosts = async (): Promise<POSTS_QUERY_RESULT> => {
   const { data } = await sanityFetch({
     query: POSTS_QUERY,
   });
@@ -68,7 +68,7 @@ export const fetchSanityPostBySlug = async ({
   slug,
 }: {
   slug: string;
-}): Promise<POST_QUERYResult> => {
+}): Promise<POST_QUERY_RESULT> => {
   const { data } = await sanityFetch({
     query: POST_QUERY,
     params: { slug },
@@ -78,7 +78,7 @@ export const fetchSanityPostBySlug = async ({
 };
 
 export const fetchSanityPostsStaticParams =
-  async (): Promise<POSTS_SLUGS_QUERYResult> => {
+  async (): Promise<POSTS_SLUGS_QUERY_RESULT> => {
     const { data } = await sanityFetch({
       query: POSTS_SLUGS_QUERY,
       perspective: "published",
@@ -88,7 +88,7 @@ export const fetchSanityPostsStaticParams =
     return data;
   };
 
-export const fetchSanityWorks = async (): Promise<WORKS_QUERYResult> => {
+export const fetchSanityWorks = async (): Promise<WORKS_QUERY_RESULT> => {
   const { data } = await sanityFetch({
     query: WORKS_QUERY,
   });
@@ -100,7 +100,7 @@ export const fetchSanityWorkBySlug = async ({
   slug,
 }: {
   slug: string;
-}): Promise<WORK_QUERYResult> => {
+}): Promise<WORK_QUERY_RESULT> => {
   const { data } = await sanityFetch({
     query: WORK_QUERY,
     params: { slug },
@@ -110,7 +110,7 @@ export const fetchSanityWorkBySlug = async ({
 };
 
 export const fetchSanityWorksStaticParams =
-  async (): Promise<WORKS_SLUGS_QUERYResult> => {
+  async (): Promise<WORKS_SLUGS_QUERY_RESULT> => {
     const { data } = await sanityFetch({
       query: WORKS_SLUGS_QUERY,
       perspective: "published",
@@ -121,7 +121,7 @@ export const fetchSanityWorksStaticParams =
   };
 
 export const fetchSanityNavigation =
-  async (): Promise<NAVIGATION_QUERYResult> => {
+  async (): Promise<NAVIGATION_QUERY_RESULT> => {
     const { data } = await sanityFetch({
       query: NAVIGATION_QUERY,
     });
@@ -129,7 +129,7 @@ export const fetchSanityNavigation =
     return data;
   };
 
-export const fetchSanitySettings = async (): Promise<SETTINGS_QUERYResult> => {
+export const fetchSanitySettings = async (): Promise<SETTINGS_QUERY_RESULT> => {
   const { data } = await sanityFetch({
     query: SETTINGS_QUERY,
   });
@@ -137,7 +137,7 @@ export const fetchSanitySettings = async (): Promise<SETTINGS_QUERYResult> => {
   return data;
 };
 
-export const fetchSanityContact = async (): Promise<CONTACT_QUERYResult> => {
+export const fetchSanityContact = async (): Promise<CONTACT_QUERY_RESULT> => {
   const { data } = await sanityFetch({
     query: CONTACT_QUERY,
   });
@@ -146,7 +146,7 @@ export const fetchSanityContact = async (): Promise<CONTACT_QUERYResult> => {
 };
 
 export const fetchSanityQuoteSettings =
-  async (): Promise<QUOTE_SETTINGS_QUERYResult> => {
+  async (): Promise<QUOTE_SETTINGS_QUERY_RESULT> => {
     const { data } = await sanityFetch({
       query: QUOTE_SETTINGS_QUERY,
     });

@@ -2,11 +2,17 @@
 
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
-import { SETTINGS_QUERYResult } from "@/sanity.types";
+import { SETTINGS_QUERY_RESULT } from "@/sanity.types";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-export default function Logo({ settings }: { settings: SETTINGS_QUERYResult }) {
+export default function Logo({
+  settings,
+  forcedTheme,
+}: {
+  settings: SETTINGS_QUERY_RESULT;
+  forcedTheme?: "light" | "dark";
+}) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -16,7 +22,7 @@ export default function Logo({ settings }: { settings: SETTINGS_QUERYResult }) {
   }, []);
 
   // During SSR or before hydration, use light theme as default
-  const themeToUse = mounted ? resolvedTheme : "light";
+  const themeToUse = forcedTheme || (mounted ? resolvedTheme : "light");
 
   // Select the appropriate logo based on resolved theme (handles "system" correctly)
   const selectedLogo =

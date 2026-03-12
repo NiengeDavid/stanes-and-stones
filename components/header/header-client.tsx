@@ -7,14 +7,14 @@ import Logo from "@/components/logo";
 import MobileNav from "@/components/header/mobile-nav";
 import DesktopNav from "@/components/header/desktop-nav";
 import { cn } from "@/lib/utils";
-import { NAVIGATION_QUERYResult, SETTINGS_QUERYResult } from "@/sanity.types";
+import { NAVIGATION_QUERY_RESULT, SETTINGS_QUERY_RESULT } from "@/sanity.types";
 
 export default function HeaderClient({
   settings,
   navigation,
 }: {
-  settings: SETTINGS_QUERYResult;
-  navigation: NAVIGATION_QUERYResult;
+  settings: SETTINGS_QUERY_RESULT;
+  navigation: NAVIGATION_QUERY_RESULT;
 }) {
   const [scrolled, setScrolled] = useState(false);
 
@@ -33,11 +33,11 @@ export default function HeaderClient({
       )}
     >
       <Container>
-        <div className="container flex items-center justify-between h-24 mx-auto">
+        <div className="flex items-center justify-between h-24 mx-auto">
           <Link href="/" aria-label="Home page">
             <Logo
               settings={settings}
-              themeOverride={scrolled ? "dark" : "light"}
+              forcedTheme={scrolled ? "dark" : "light"}
             />
           </Link>
 

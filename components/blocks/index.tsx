@@ -1,6 +1,7 @@
-import { PAGE_QUERYResult } from "@/sanity.types";
+import { PAGE_QUERY_RESULT } from "@/sanity.types";
 import Hero1 from "@/components/blocks/hero/hero-1";
 import Hero2 from "@/components/blocks/hero/hero-2";
+import Hero3 from "@/components/blocks/hero/hero-3";
 import SectionHeader from "@/components/blocks/section-header";
 import SplitRow from "@/components/blocks/split/split-row";
 import GridRow from "@/components/blocks/grid/grid-row";
@@ -14,13 +15,14 @@ import FormNewsletter from "@/components/blocks/forms/newsletter";
 import AllPosts from "@/components/blocks/all-posts";
 import Quote from "@/components/blocks/quote/index";
 
-type Block = NonNullable<NonNullable<PAGE_QUERYResult>["blocks"]>[number];
+type Block = NonNullable<NonNullable<PAGE_QUERY_RESULT>["blocks"]>[number];
 
 const componentMap: {
   [K in Block["_type"]]: React.ComponentType<Extract<Block, { _type: K }>>;
 } = {
   "hero-1": Hero1,
   "hero-2": Hero2,
+  "hero-3": Hero3,
   "section-header": SectionHeader,
   "split-row": SplitRow,
   "grid-row": GridRow,

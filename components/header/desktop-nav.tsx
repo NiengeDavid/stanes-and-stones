@@ -12,7 +12,7 @@ export default function DesktopNav({
   scrolled: boolean;
 }) {
   return (
-    <div className="hidden xl:flex items-center gap-7">
+    <div className="hidden xl:flex items-center gap-8">
       {navigation[0]?.links?.map((navItem: SanityLink) => (
         <Link
           key={navItem._key}
@@ -20,7 +20,7 @@ export default function DesktopNav({
           target={navItem.target ? "_blank" : undefined}
           rel={navItem.target ? "noopener noreferrer" : undefined}
           className={cn(
-            "text-xl font-medium transition-colors",
+            "text-2xl font-extralight leading-3 tracking-wide transition-colors",
             scrolled
               ? "text-white hover:text-white/80"
               : "text-black hover:text-black/70",

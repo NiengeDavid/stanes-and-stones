@@ -1,11 +1,11 @@
 import { groq } from "next-sanity";
 import { linkQuery } from "../shared/link";
-import { imageQuery } from "../shared/image";
 import { bodyQuery } from "../shared/body";
+import { videoQuery } from "../shared/video";
 
 // @sanity-typegen-ignore
-export const hero1Query = groq`
-  _type == "hero-1" => {
+export const hero3Query = groq`
+  _type == "hero-3" => {
     _type,
     _key,
     tagLine,
@@ -13,8 +13,8 @@ export const hero1Query = groq`
     body[]{
       ${bodyQuery}
     },
-    images[]{
-      ${imageQuery}
+   video{
+      ${videoQuery}
     },
     links[]{
       ${linkQuery}

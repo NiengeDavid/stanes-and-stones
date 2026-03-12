@@ -20,14 +20,19 @@ export default defineType({
       type: "block-content",
     }),
     defineField({
-      name: "image",
-      title: "Image",
-      type: "image",
-      fields: [
+      name: "images",
+      title: "Images",
+      type: "array",
+      of: [
         {
-          name: "alt",
-          type: "string",
-          title: "Alternative Text",
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative Text",
+            },
+          ],
         },
       ],
     }),
@@ -36,12 +41,6 @@ export default defineType({
       type: "array",
       of: [{ type: "link" }],
       validation: (rule) => rule.max(2),
-    }),
-    defineField({
-      name: "works",
-      type: "array",
-      of: [{ type: "reference", to: [{ type: "featuredWorks" }] }],
-      validation: (rule) => rule.max(3),
     }),
   ],
   preview: {

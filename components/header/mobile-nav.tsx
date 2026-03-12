@@ -13,18 +13,18 @@ import Link from "next/link";
 import Logo from "@/components/logo";
 import { useState } from "react";
 import { AlignRight } from "lucide-react";
-import { SETTINGS_QUERYResult, NAVIGATION_QUERYResult } from "@/sanity.types";
+import { SETTINGS_QUERY_RESULT, NAVIGATION_QUERY_RESULT } from "@/sanity.types";
 import { cn } from "@/lib/utils";
 
-type SanityLink = NonNullable<NAVIGATION_QUERYResult[0]["links"]>[number];
+type SanityLink = NonNullable<NAVIGATION_QUERY_RESULT[0]["links"]>[number];
 
 export default function MobileNav({
   navigation,
   settings,
   scrolled,
 }: {
-  navigation: NAVIGATION_QUERYResult;
-  settings: SETTINGS_QUERYResult;
+  navigation: NAVIGATION_QUERY_RESULT;
+  settings: SETTINGS_QUERY_RESULT;
   scrolled: boolean;
 }) {
   const [open, setOpen] = useState(false);
@@ -53,7 +53,7 @@ export default function MobileNav({
           <div className="mx-auto">
             <Logo
               settings={settings}
-              themeOverride={scrolled ? "dark" : "light"}
+              forcedTheme={scrolled ? "dark" : "light"}
             />
           </div>
           <div className="sr-only">
@@ -72,7 +72,7 @@ export default function MobileNav({
                     target={navItem.target ? "_blank" : undefined}
                     rel={navItem.target ? "noopener noreferrer" : undefined}
                     className={cn(
-                      "text-xl font-medium transition-colors hover:text-primary/80",
+                      "text-2xl font-extralight leading-3 tracking-wide transition-colors hover:text-primary/80",
                       scrolled
                         ? "text-white hover:text-white/80"
                         : "text-black hover:text-black/70",
