@@ -23,6 +23,17 @@ export default defineType({
       type: "color-variant",
       description: "Select a background color variant",
     }),
+     defineField({
+      name: "image",
+      type: "image",
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
+        },
+      ],
+    }),
     defineField({
       name: "tagLine",
       type: "string",

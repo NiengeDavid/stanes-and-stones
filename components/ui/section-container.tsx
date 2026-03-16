@@ -25,7 +25,7 @@ export default function SectionContainer({
         className
       )}
     >
-      <div className="container">{children}</div>
+      <div className="container max-w-420 mx-auto">{children}</div>
     </div>
   );
 }

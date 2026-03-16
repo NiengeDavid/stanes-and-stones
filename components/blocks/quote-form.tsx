@@ -16,10 +16,10 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 import { Separator } from "@/components/ui/separator";
-import { QUOTE_SETTINGS_QUERYResult } from "@/sanity.types";
+import { QUOTE_SETTINGS_QUERY_RESULT } from "@/sanity.types";
 import { Spinner } from "../ui/spinner";
 
-type Settings = QUOTE_SETTINGS_QUERYResult;
+type Settings = QUOTE_SETTINGS_QUERY_RESULT;
 
 const QuoteSchema = z.object({
   pages: z.number().min(1, "At least 1 page"),

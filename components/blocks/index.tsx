@@ -14,12 +14,18 @@ import FAQs from "@/components/blocks/faqs";
 import FormNewsletter from "@/components/blocks/forms/newsletter";
 import AllPosts from "@/components/blocks/all-posts";
 import Quote from "@/components/blocks/quote/index";
+import AllProjects from "@/components/blocks/all-projects";
+import ProjectHighlight from "@/components/blocks/project-highlight";
 
 type Block = NonNullable<NonNullable<PAGE_QUERY_RESULT>["blocks"]>[number];
 
-const componentMap: {
-  [K in Block["_type"]]: React.ComponentType<Extract<Block, { _type: K }>>;
-} = {
+// Known block types from sanity.types.ts
+type KnownBlock = Block;
+
+// Extended map that allows new block types not yet in generated types
+// (these will appear after running `pnpm sanity typegen generate`)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const componentMap: Record<string, React.ComponentType<any>> = {
   "hero-1": Hero1,
   "hero-2": Hero2,
   "hero-3": Hero3,
@@ -35,21 +41,16 @@ const componentMap: {
   "quote-block": Quote,
   "form-newsletter": FormNewsletter,
   "all-posts": AllPosts,
+  "all-projects": AllProjects,
+  "project-highlight": ProjectHighlight,
 };
 
-export default function Blocks({ blocks }: { blocks: Block[] }) {
-  // console.log("All blocks:", blocks); // Debug log
-  // console.log(
-  //   "Block types:",
-  //   blocks?.map((b) => b._type)
-  // ); // Debug log
-
+export default function Blocks({ blocks }: { blocks: KnownBlock[] }) {
   return (
     <>
       {blocks?.map((block) => {
         const Component = componentMap[block._type];
         if (!Component) {
-          // Fallback for development/debugging of new component types
           console.warn(
             `No component implemented for block type: ${block._type}`
           );

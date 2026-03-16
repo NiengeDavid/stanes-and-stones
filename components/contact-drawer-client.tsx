@@ -13,11 +13,11 @@ import { cn } from "@/lib/utils";
 import Logo from "@/components/logo";
 import { useState, useEffect } from "react";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import { CONTACT_QUERYResult, SETTINGS_QUERYResult } from "@/sanity.types";
+import { CONTACT_QUERY_RESULT, SETTINGS_QUERY_RESULT } from "@/sanity.types";
 
 interface ContactDrawerClientProps {
-  contactInfo: CONTACT_QUERYResult;
-  settings: SETTINGS_QUERYResult;
+  contactInfo: CONTACT_QUERY_RESULT;
+  settings: SETTINGS_QUERY_RESULT;
 }
 
 export function ContactDrawerClient({

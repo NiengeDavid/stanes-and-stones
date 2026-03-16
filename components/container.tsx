@@ -10,7 +10,7 @@ export default function Container({
 }: React.PropsWithChildren<Props>) {
   return (
     <div
-      className={`container px-5 w-full max-w-480 mx-auto ${className ? className : ""}`}
+      className={`container px-5 w-full max-w-420 mx-auto ${className ? className : ""}`}
     >
       {children}
     </div>

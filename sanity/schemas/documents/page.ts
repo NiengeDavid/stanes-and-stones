@@ -54,6 +54,8 @@ export default defineType({
         { type: "quote-block" },
         { type: "form-newsletter" },
         { type: "all-posts" },
+        { type: "all-projects" },
+        { type: "project-highlight" },
       ],
       options: {
         insertMenu: {
@@ -117,6 +119,11 @@ export default defineType({
               name: "all-posts",
               title: "All Posts",
               of: ["all-posts"],
+            },
+            {
+              name: "projects",
+              title: "Projects",
+              of: ["all-projects", "project-highlight"],
             },
           ],
           views: [

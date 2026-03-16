@@ -45,11 +45,32 @@ async function getPostsSitemap(): Promise<MetadataRoute.Sitemap[]> {
   return data;
 }
 
+async function getProjectsSitemap(): Promise<MetadataRoute.Sitemap[]> {
+  const projectsQuery = groq`
+    *[_type == 'project'] | order(orderRank) {
+      'url': $baseUrl + '/projects/' + slug.current,
+      'lastModified': _updatedAt,
+      'changeFrequency': 'weekly',
+      'priority': 0.7
+    }
+  `;
+
+  const { data } = await sanityFetch({
+    query: projectsQuery,
+    params: {
+      baseUrl: process.env.NEXT_PUBLIC_SITE_URL,
+    },
+  });
+
+  return data;
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap[]> {
-  const [pages, posts] = await Promise.all([
+  const [pages, posts, projects] = await Promise.all([
     getPagesSitemap(),
     getPostsSitemap(),
+    getProjectsSitemap(),
   ]);
 
-  return [...pages, ...posts];
+  return [...pages, ...posts, ...projects];
 }

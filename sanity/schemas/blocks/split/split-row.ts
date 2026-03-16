@@ -33,7 +33,7 @@ export default defineType({
         { type: "split-image" },
         { type: "split-info-list" },
       ],
-      validation: (rule) => rule.max(2),
+      validation: (rule) => rule.max(3),
       options: {
         insertMenu: {
           views: [

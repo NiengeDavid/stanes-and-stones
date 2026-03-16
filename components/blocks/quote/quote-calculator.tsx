@@ -1,12 +1,12 @@
 "use client";
 
-import { QUOTE_SETTINGS_QUERYResult } from "@/sanity.types";
+import { QUOTE_SETTINGS_QUERY_RESULT } from "@/sanity.types";
 import QuoteForm from "../quote-form";
 import { Separator } from "@/components/ui/separator";
 import { Tag, Flame, Paintbrush, Rocket, Grid3x3, Clock } from "lucide-react";
 
 interface QuoteCalculatorProps {
-  settings: QUOTE_SETTINGS_QUERYResult;
+  settings: QUOTE_SETTINGS_QUERY_RESULT;
   title?: string | null;
   description?: string | null;
   padding?: any;

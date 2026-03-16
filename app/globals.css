@@ -6,6 +6,7 @@
 
 @theme {
   --font-sans: var(--font-sans);
+  --text-base: 18px;
 
   /* Custom animations */
   --animate-accordion-down: accordion-down 0.2s ease-out;
@@ -70,7 +71,7 @@
   --radius: 0.5rem;
 }
 .dark {
-  --background: hsl(224 71.4% 4.1%);
+  --background: hsl(0, 0%, 0%);
   --foreground: hsl(210 20% 98%);
   --card: hsl(224 71.4% 4.1%);
   --card-foreground: hsl(210 20% 98%);
@@ -78,7 +79,7 @@
   --popover-foreground: hsl(210 20% 98%);
   --primary: hsl(210 20% 98%);
   --primary-foreground: hsl(220.9 39.3% 11%);
-  --secondary: hsl(215 27.9% 16.9%);
+  --secondary: hsl(0, 0%, 0%);
   --secondary-foreground: hsl(210 20% 98%);
   --muted: hsl(215 27.9% 16.9%);
   --muted-foreground: hsl(217.9 10.6% 64.9%);
@@ -332,4 +333,5 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 18px;
 }

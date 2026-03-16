@@ -30,9 +30,9 @@ export default function Hero1({ tagLine, title, body, images }: Hero1Props) {
     <section className="relative isolate overflow-hidden bg-black text-white">
       <Container>
         {/* bottom band to match screenshot */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-zinc-100" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-primary" />
 
-        <div className="relative z-10 mx-auto px-6 py-16 md:py-24">
+        <div className="relative z-10 mx-auto py-16 md:py-24">
           <div className="grid items-start gap-10 md:grid-cols-12">
             {/* Image block (contained, not absolute) */}
             <div className="md:col-span-7">
@@ -73,7 +73,7 @@ export default function Hero1({ tagLine, title, body, images }: Hero1Props) {
                 <p className="mb-4 text-muted-foreground">{tagLine}</p>
               )}
               {title && (
-                <h1 className="text-black md:text-white text-shadow-2xs text-5xl font-semibold tracking-tight md:text-7xl">
+                <h1 className="text-black md:text-white text-shadow-2xs text-7xl font-bold tracking-tight md:text-[7rem]">
                   {title} 
                 <br />
                 <span className="text-highlight ease-in-out transition-colors duration-1800">

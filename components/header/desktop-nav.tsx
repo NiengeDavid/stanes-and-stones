@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { NAVIGATION_QUERYResult } from "@/sanity.types";
+import { NAVIGATION_QUERY_RESULT } from "@/sanity.types";
 
-type SanityLink = NonNullable<NAVIGATION_QUERYResult[0]["links"]>[number];
+type SanityLink = NonNullable<NAVIGATION_QUERY_RESULT[0]["links"]>[number];
 
 export default function DesktopNav({
   navigation,
   scrolled,
 }: {
-  navigation: NAVIGATION_QUERYResult;
+  navigation: NAVIGATION_QUERY_RESULT;
   scrolled: boolean;
 }) {
   return (

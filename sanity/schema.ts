@@ -8,8 +8,10 @@ import faq from "./schemas/documents/faq";
 import testimonial from "./schemas/documents/testimonial";
 import navigation from "./schemas/documents/navigation";
 import settings from "./schemas/documents/settings";
-import featuredWorks from "./schemas/documents/work";
+import project from "./schemas/documents/project";
 import contact from "./schemas/documents/contact";
+import socials from "./schemas/documents/socials";
+import companyInfo from "./schemas/documents/company-info";
 
 // Schema UI shared objects
 import blockContent from "./schemas/blocks/shared/block-content";
@@ -44,6 +46,8 @@ import quoteSettings from "./schemas/blocks/quote-settings";
 import quoteBlock from "./schemas/blocks/quote-block";
 import newsletter from "./schemas/blocks/forms/newsletter";
 import allPosts from "./schemas/blocks/all-posts";
+import allProjects from "./schemas/blocks/all-projects";
+import projectHighlight from "./schemas/blocks/project-highlight";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -56,8 +60,10 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     testimonial,
     navigation,
     settings,
-    featuredWorks,
+    project,
     contact,
+    socials,
+    companyInfo,
     // shared objects
     blockContent,
     link,
@@ -91,5 +97,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     quoteBlock,
     newsletter,
     allPosts,
+    allProjects,
+    projectHighlight,
   ],
 };

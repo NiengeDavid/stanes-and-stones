@@ -14,6 +14,8 @@ import { faqsQuery } from "./faqs";
 import { quoteBlockQuery } from "./quote-block";
 import { formNewsletterQuery } from "./forms/newsletter";
 import { allPostsQuery } from "./all-posts";
+import { allProjectsQuery } from "./all-projects";
+import { projectHighlightQuery } from "./project-highlight";
 
 export const PAGE_QUERY = groq`
   *[_type == "page" && slug.current == $slug][0]{
@@ -32,7 +34,9 @@ export const PAGE_QUERY = groq`
       ${faqsQuery},
       ${quoteBlockQuery},
       ${formNewsletterQuery},
-      ${allPostsQuery}
+      ${allPostsQuery},
+      ${allProjectsQuery},
+      ${projectHighlightQuery}
     },
     meta_title,
     meta_description,

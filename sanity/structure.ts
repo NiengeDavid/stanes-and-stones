@@ -7,9 +7,11 @@ import {
   Quote,
   Menu,
   Settings,
-  Star,
+  Briefcase,
   Phone,
   Calculator,
+  Share2,
+  Building2,
 } from "lucide-react";
 
 export const structure = (S: any, context: any) =>
@@ -60,9 +62,9 @@ export const structure = (S: any, context: any) =>
         context,
       }),
       orderableDocumentListDeskItem({
-        type: "featuredWorks",
-        title: "Works",
-        icon: Star,
+        type: "project",
+        title: "Projects",
+        icon: Briefcase,
         S,
         context,
       }),
@@ -89,6 +91,24 @@ export const structure = (S: any, context: any) =>
             .id("navigation")
             .schemaType("navigation")
             .documentId("navigation")
+        ),
+      S.listItem()
+        .title("Socials")
+        .icon(Share2)
+        .child(
+          S.editor()
+            .id("socials")
+            .schemaType("socials")
+            .documentId("socials")
+        ),
+      S.listItem()
+        .title("Company Info")
+        .icon(Building2)
+        .child(
+          S.editor()
+            .id("companyInfo")
+            .schemaType("companyInfo")
+            .documentId("companyInfo")
         ),
       S.listItem()
         .title("Settings")

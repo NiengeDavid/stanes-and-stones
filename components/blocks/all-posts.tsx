@@ -3,10 +3,10 @@ import PostCard from "@/components/ui/post-card";
 import Link from "next/link";
 import { stegaClean } from "next-sanity";
 import { fetchSanityPosts } from "@/sanity/lib/fetch";
-import { PAGE_QUERYResult } from "@/sanity.types";
+import { PAGE_QUERY_RESULT } from "@/sanity.types";
 
 type AllPostsProps = Extract<
-  NonNullable<NonNullable<PAGE_QUERYResult>["blocks"]>[number],
+  NonNullable<NonNullable<PAGE_QUERY_RESULT>["blocks"]>[number],
   { _type: "all-posts" }
 >;
 
