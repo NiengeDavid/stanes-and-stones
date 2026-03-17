@@ -19,7 +19,7 @@ export default async function ProjectsPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Page header */}
-      <div className="max-w-[1400px] mx-auto px-6 md:px-10 pt-20 pb-10">
+      <div className="max-w-350 mx-auto px-6 md:px-10 pt-20 pb-10">
         <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-4">
           Our Work
         </p>
@@ -30,7 +30,7 @@ export default async function ProjectsPage() {
 
       {/* Project grid */}
       {safeProjects.length > 0 ? (
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 pb-24">
+        <div className="max-w-350 mx-auto px-6 md:px-10 pb-24">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             {/* Left column */}
             <div className="flex flex-col gap-8">
@@ -47,7 +47,7 @@ export default async function ProjectsPage() {
           </div>
         </div>
       ) : (
-        <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-24 text-center">
+        <div className="max-w-350 mx-auto px-6 md:px-10 py-24 text-center">
           <p className="text-muted-foreground">No projects yet.</p>
         </div>
       )}

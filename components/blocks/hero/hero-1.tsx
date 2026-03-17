@@ -50,7 +50,7 @@ export default function Hero1({ tagLine, title, body, images }: Hero1Props) {
                         src={urlFor(image).url()}
                         alt={image.alt || ""}
                         fill
-                        className="object-cover w-full"
+                        className="object-contain w-full"
                         priority={index === 0}
                         placeholder={
                           image?.asset?.metadata?.lqip &&
