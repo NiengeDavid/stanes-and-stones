@@ -73,7 +73,7 @@ export default function Hero1({ tagLine, title, body, images }: Hero1Props) {
                 <p className="mb-4 text-muted-foreground">{tagLine}</p>
               )}
               {title && (
-                <h1 className="text-black md:text-white text-shadow-2xs text-7xl font-bold tracking-tight md:text-[7rem]">
+                <h1 className="text-black text-shadow-white md:text-white text-shadow-2xs text-6xl font-bold tracking-tight md:text-[7rem]">
                   {title} 
                 <br />
                 <span className="text-highlight ease-in-out transition-colors duration-1800">

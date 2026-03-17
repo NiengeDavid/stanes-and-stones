@@ -70,7 +70,7 @@ export default function Carousel1({
             className={cn(
               "relative mx-auto overflow-hidden rounded-2xl w-full",
               IMAGE_SIZES[stegaSize],
-              stegaSize === "one" ? "max-w-[35rem]" : undefined
+              stegaSize === "one" ? "max-w-140" : undefined
             )}
           >
             <Image
