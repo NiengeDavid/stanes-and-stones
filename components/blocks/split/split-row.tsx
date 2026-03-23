@@ -35,7 +35,7 @@ export default function SplitRow({
       {splitColumns && splitColumns?.length > 0 && (
         <div
           className={cn(
-            "grid grid-cols-1 lg:grid-cols-3",
+            "grid grid-cols-1 lg:grid-cols-3 items-start",
             noGap ? "gap-0" : "gap-12 lg:gap-20"
           )}
         >

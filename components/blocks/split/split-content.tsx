@@ -22,6 +22,7 @@ interface SplitContentProps extends SplitContent {
 export default function SplitContent({
   sticky,
   padding,
+  colorVariant,
   noGap,
   image,
   tagLine,
@@ -29,6 +30,8 @@ export default function SplitContent({
   body,
   link,
 }: SplitContentProps) {
+  const color = stegaClean(colorVariant);
+
   return (
     <div
       className={cn(
@@ -55,7 +58,7 @@ export default function SplitContent({
           </div>
         )}
         {tagLine && (
-          <TagLine title={tagLine} element="h2" className="text-sm" />
+          <TagLine title={tagLine} element="h2" className="text-sm text-muted-foreground" />
         )}
         {title &&
           createElement(
@@ -63,11 +66,12 @@ export default function SplitContent({
             {
               className: cn(
                 "w-32 md:w-80 my-4 mb-4 md:mb-6 font-semibold leading-[1.2] ",
+                color === "primary" ? "text-black" : undefined
               ),
             },
             title,
           )}
-        {body && <PortableTextRenderer value={body} />}
+        {body && <PortableTextRenderer value={body} className={cn(color === "primary" ? "text-black" : undefined)} />}
         {link?.href && (
           <div className="flex flex-col">
             <Button

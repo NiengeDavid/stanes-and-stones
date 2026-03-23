@@ -12,6 +12,8 @@ type Hero2Props = Extract<
 >;
 
 export default function Hero2({
+  padding,
+  colorVariant,
   tagLine,
   title,
   body,
@@ -22,25 +24,38 @@ export default function Hero2({
   const isNarrow = stegaClean(sectionWidth) === "narrow";
   const align = stegaClean(stackAlign);
   const safeLinks = links ?? [];
+  const color = stegaClean(colorVariant);
 
   return (
-    <section className="w-full bg-primary py-16">
+    <section
+      className={cn(
+        `bg-${color} relative`,
+        padding?.top ? "pt-16 xl:pt-20" : undefined,
+        padding?.bottom ? "pb-16 xl:pb-20" : undefined,
+        "w-full py-16",
+      )}
+    >
       <div
         className={cn(
           align === "center" ? "max-w-3xl text-center mx-auto" : undefined,
           isNarrow ? "max-w-3xl mx-auto" : undefined,
-          "bg-primary flex items-center justify-center pb-28 py-8 w-full",
+          "flex items-center justify-center pb-28 py-8 w-full",
         )}
       >
         <Container>
           <div className="">
             {tagLine && (
-              <h1 className="leading-0 text-4xl text-muted font-sans animate-fade-up [animation-delay:100ms] opacity-0">
+              <h1 className="leading-0 text-4xl text-muted-foreground font-sans animate-fade-up [animation-delay:100ms] opacity-0">
                 <span className="text-base font-semibold">{tagLine}</span>
               </h1>
             )}
             {title && (
-              <h2 className="mt-4 text-black text-shadow-2xs font-extralight text-4xl md:text-6xl animate-fade-up [animation-delay:200ms] opacity-0">
+              <h2
+                className={cn(
+                  "mt-4 text-shadow-2xs font-extralight text-4xl md:text-6xl animate-fade-up [animation-delay:200ms] opacity-0",
+                  color === "primary" ? "text-black" : undefined,
+                )}
+              >
                 {title}
               </h2>
             )}

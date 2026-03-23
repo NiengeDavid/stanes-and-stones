@@ -150,10 +150,16 @@ const portableTextComponents: PortableTextProps["components"] = {
 
 const PortableTextRenderer = ({
   value,
+  className,
 }: {
   value: PortableTextProps["value"];
+  className?: string;
 }) => {
-  return <PortableText value={value} components={portableTextComponents} />;
+  return (
+    <div className={className}>
+      <PortableText value={value} components={portableTextComponents} />
+    </div>
+  );
 };
 
 export default PortableTextRenderer;

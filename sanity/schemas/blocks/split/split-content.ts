@@ -23,7 +23,7 @@ export default defineType({
       type: "color-variant",
       description: "Select a background color variant",
     }),
-     defineField({
+    defineField({
       name: "image",
       type: "image",
       fields: [

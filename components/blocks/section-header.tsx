@@ -40,7 +40,9 @@ export default function SectionHeader({
           )}
           <h2 className="max-w-5xl text-3xl md:text-6xl mb-4">{title}</h2>
         </div>
-        <p>{description}</p>
+        <p className={cn(color === "primary" ? "text-background" : undefined, "max-w-2xl")}>
+          {description}
+        </p>
       </div>
     </SectionContainer>
   );
