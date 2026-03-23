@@ -1,6 +1,3 @@
-"use client";
-
-import React from "react";
 import SectionContainer from "@/components/ui/section-container";
 import { stegaClean } from "next-sanity";
 import Image from "next/image";
@@ -29,8 +26,10 @@ type Carousel1 = Extract<
   { _type: "carousel-1" }
 >;
 
-interface Carousel1Props
-  extends Omit<NonNullable<Carousel1>, "_type" | "_key"> {
+interface Carousel1Props extends Omit<
+  NonNullable<Carousel1>,
+  "_type" | "_key"
+> {
   size: CarouselSize | null;
   indicators: "none" | "dots" | "count" | null;
 }
@@ -62,7 +61,7 @@ export default function Carousel1({
         key={`${index}-${image.alt}`}
         className={cn(
           "flex justify-center items-center w-full",
-          CAROUSEL_SIZES[stegaSize]
+          CAROUSEL_SIZES[stegaSize],
         )}
       >
         {image && (
@@ -70,7 +69,7 @@ export default function Carousel1({
             className={cn(
               "relative mx-auto overflow-hidden rounded-2xl w-full",
               IMAGE_SIZES[stegaSize],
-              stegaSize === "one" ? "max-w-140" : undefined
+              stegaSize === "one" ? "max-w-140" : undefined,
             )}
           >
             <Image

@@ -37,6 +37,7 @@ import gridPost from "./schemas/blocks/grid/grid-post";
 import gridRow from "./schemas/blocks/grid/grid-row";
 import carousel1 from "./schemas/blocks/carousel/carousel-1";
 import carousel2 from "./schemas/blocks/carousel/carousel-2";
+import carousel4 from "./schemas/blocks/carousel/carousel-4";
 import timelineRow from "./schemas/blocks/timeline/timeline-row";
 import timelinesOne from "./schemas/blocks/timeline/timelines-1";
 import cta1 from "./schemas/blocks/cta/cta-1";
@@ -88,6 +89,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     gridRow,
     carousel1,
     carousel2,
+    carousel4,
     timelineRow,
     timelinesOne,
     cta1,
