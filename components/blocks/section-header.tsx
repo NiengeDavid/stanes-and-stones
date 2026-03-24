@@ -35,7 +35,7 @@ export default function SectionHeader({
         >
           {tagLine && (
             <h1 className="leading-0 mb-4">
-              <span className="text-base font-semibold">{tagLine}</span>
+              <span className="text-base text-muted-foreground font-semibold">{tagLine}</span>
             </h1>
           )}
           <h2 className="max-w-5xl text-3xl md:text-6xl mb-4">{title}</h2>
