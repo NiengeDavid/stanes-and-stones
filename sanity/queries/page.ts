@@ -17,6 +17,7 @@ import { formNewsletterQuery } from "./forms/newsletter";
 import { allPostsQuery } from "./all-posts";
 import { allProjectsQuery } from "./all-projects";
 import { projectHighlightQuery } from "./project-highlight";
+import { contact1Query } from "./contact/contact-1";
 
 export const PAGE_QUERY = groq`
   *[_type == "page" && slug.current == $slug][0]{
@@ -38,7 +39,8 @@ export const PAGE_QUERY = groq`
       ${formNewsletterQuery},
       ${allPostsQuery},
       ${allProjectsQuery},
-      ${projectHighlightQuery}
+      ${projectHighlightQuery},
+      ${contact1Query}
     },
     meta_title,
     meta_description,

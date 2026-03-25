@@ -17,6 +17,7 @@ import AllPosts from "@/components/blocks/all-posts";
 import Quote from "@/components/blocks/quote/index";
 import AllProjects from "@/components/blocks/all-projects";
 import ProjectHighlight from "@/components/blocks/project-highlight";
+import Contact1 from "@/components/blocks/contact/contact-1";
 
 type Block = NonNullable<NonNullable<PAGE_QUERY_RESULT>["blocks"]>[number];
 
@@ -45,6 +46,7 @@ const componentMap: Record<string, React.ComponentType<any>> = {
   "all-posts": AllPosts,
   "all-projects": AllProjects,
   "project-highlight": ProjectHighlight,
+  "contact-1": Contact1,
 };
 
 export default function Blocks({ blocks }: { blocks: KnownBlock[] }) {

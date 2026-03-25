@@ -57,6 +57,7 @@ export default defineType({
         { type: "all-posts" },
         { type: "all-projects" },
         { type: "project-highlight" },
+        { type: "contact-1" },
       ],
       options: {
         insertMenu: {
@@ -125,6 +126,11 @@ export default defineType({
               name: "projects",
               title: "Projects",
               of: ["all-projects", "project-highlight"],
+            },
+            {
+              name: "contact",
+              title: "Contact",
+              of: ["contact-1"],
             },
           ],
           views: [

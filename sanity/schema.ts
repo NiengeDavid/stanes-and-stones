@@ -49,6 +49,7 @@ import newsletter from "./schemas/blocks/forms/newsletter";
 import allPosts from "./schemas/blocks/all-posts";
 import allProjects from "./schemas/blocks/all-projects";
 import projectHighlight from "./schemas/blocks/project-highlight";
+import contact1 from "./schemas/blocks/contact/contact-1";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -101,5 +102,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     allPosts,
     allProjects,
     projectHighlight,
+    contact1,
   ],
 };
