@@ -21,7 +21,9 @@ export default function Hero3({ tagLine, title, body, video }: Hero3Props) {
         <div className="flex flex-col justify-center mb-6">
           {tagLine && (
             <h1 className="leading-0 font-sans animate-fade-up [animation-delay:100ms] opacity-0">
-              <span className="text-base text-muted-foreground font-semibold">{tagLine}</span>
+              <span className="text-base text-muted-foreground font-semibold">
+                {tagLine}
+              </span>
             </h1>
           )}
           {title && (
@@ -44,6 +46,9 @@ export default function Hero3({ tagLine, title, body, video }: Hero3Props) {
                 className="w-full h-auto"
                 width={videoDimensions?.width ?? 800}
                 height={videoDimensions?.height ?? 600}
+                autoPlay
+                loop
+                muted
                 controls
               />
             </div>
