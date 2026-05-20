@@ -113,7 +113,7 @@ export default async function Footer() {
             <Link href="/" aria-label="Home page" className="inline-block">
               <Logo settings={settings} />
             </Link>
-            <div className="flex items-left gap-2">
+            <div className="flex items-left gap-2 text-white">
               <span>&copy; {new Date().getFullYear()}</span>
               {settings?.copyright && (
                 <span className="[&>p]:m-0! text-primary">

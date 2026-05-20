@@ -25,7 +25,7 @@ export default function Hero3({ tagLine, title, body, video }: Hero3Props) {
             </h1>
           )}
           {title && (
-            <h2 className="max-w-xl mt-6 font-bold leading-[1.1] text-4xl md:text-5xl lg:text-6xl animate-fade-up [animation-delay:200ms] opacity-0">
+            <h2 className="max-w-2xl mt-6 font-bold leading-[1.1] text-4xl md:text-5xl lg:text-6xl animate-fade-up [animation-delay:200ms] opacity-0">
               {title}
             </h2>
           )}
