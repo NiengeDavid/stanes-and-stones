@@ -64,7 +64,7 @@ export default function Cta1({
           {links && links.length > 0 && (
             <div
               className={cn(
-                "mt-10 flex flex-wrap gap-4 justify-start",
+                "flex flex-wrap gap-4 justify-start",
                 align === "center" ? "justify-center" : undefined,
               )}
             >
